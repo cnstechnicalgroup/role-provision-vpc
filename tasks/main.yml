@@ -16,3 +16,8 @@
     route_tables: "{{ route_tables }}"
     region: "{{ region }}"
   register: vpc
+
+- name: Initial VPC peering request
+  local_action: command /usr/local/bin/aws ec2 create-vpc-peering-connection --vpc-id {{ vpc.vpc_id }} --peer-vpc-id {{ vpc_peer_vpc_id }} --peer-owner-id {{ vpc_peer_owner_id }} --profile {{ owner }}
+  sudo: no
+  when: vpc_peering == True and vpc_peer_vpc_id is defined
