@@ -22,6 +22,9 @@ In the current version, you can specify the following variables:
 | vpc_resource_tags  |   ---   | Resource tags to assign to VPC (see example)           |
 | subnets            |   ---   | Subnets dict describing all VPC subnets (see example)  |
 | route_tables       |   ---   | Route table dict describing all VPC route tables       |
+| vpc_peer_vpc_id    |   ---   | VPC ID for VPC Peer owner                              |
+| vpc_peer_owner_id  |   ---   | VPC Peer Owner AWS Account ID                          |
+| vpc_peering        |   ---   | Submit VPC Peering request? (True / False)             |
 
 * All fields required
 
